@@ -1,0 +1,24 @@
+{
+  "extends": "../common/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+  },
+  // 상위 tsconfig.json파일이 존재하는 곳에 빌드 실행.
+  // "compilerOptions": {
+  //   "declarationDir": "dist",
+  //   "rootDir": "src",
+  //   "composite": true
+  // },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "snowpack.config.js"
+  ],
+  "include": ["src"]
+}

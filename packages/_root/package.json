@@ -1,0 +1,31 @@
+{
+  "name": "@jangbuda-frontend/root",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cleanup": "rimraf build",
+    "start": "snowpack dev --reload",
+    "build": "yarn cleanup && snowpack build",
+    "serve": "serve build"
+  },
+  "babel": {
+    "extends": "../babel.config.json"
+  },
+  "dependencies": {
+    "@jangbuda-frontend/manager": "1.0.0",
+    "@jangbuda-frontend/member": "1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "typescript": "^4.2.3"
+  }
+}

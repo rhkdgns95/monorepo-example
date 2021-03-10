@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run start",
+    "test": "lerna run test",
+    "serve:root": "lerna run serve --scope=@jangbuda-frontend/root",
+    "start:manager": "lerna run start --scope=@jangbuda-frontend/manager",
+    "start:member": "lerna run start --scope=@jangbuda-frontend/member",
+    "start:root": "lerna run start --scope=@jangbuda-frontend/root",
+    "prebuild:app": "lerna run build --scope=@jangbuda-frontend/common",
+    "build:app": "lerna run build --scope={@jangbuda-frontend/member,@jangbuda-frontend/manager}",
+    "postbuild:app": "lerna run build --scope=@jangbuda-frontend/root",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
