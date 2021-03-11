@@ -13,6 +13,7 @@
     "extends": "../babel.config.json"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "snowpack": "^3.0.13"
