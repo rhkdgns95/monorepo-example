@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Root } from "@jangbuda-frontend/common";
 
 const ManagerApp = React.lazy(() => import("@jangbuda-frontend/manager"));
+// @ts-ignore
 const MemberApp = React.lazy(() => import("@jangbuda-frontend/member"));
 
 const App = () => {

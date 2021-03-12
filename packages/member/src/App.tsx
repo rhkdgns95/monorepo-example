@@ -1,6 +1,9 @@
+import React, { Suspense } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useTypedQuery } from "@jangbuda-frontend/common";
+import { Home, MyPage } from "./routes";
 
-const App = () => {
+const App: React.FC = () => {
   const { data, loading } = useTypedQuery({
     users: {
       username: true,
@@ -30,6 +33,17 @@ const App = () => {
               </h5>
             ))}
           </div>
+          <>
+            <BrowserRouter>
+              <Suspense fallback={<span>wait...</span>}>
+                <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/mypage" component={MyPage} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </Suspense>
+            </BrowserRouter>
+          </>
         </>
       )}
     </>

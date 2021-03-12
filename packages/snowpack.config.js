@@ -36,4 +36,5 @@ module.exports = {
     open: "chrome",
     hmr: true,
   },
+  routes: [{ src: ".*", dest: "index.html", match: "routes" }],
 };

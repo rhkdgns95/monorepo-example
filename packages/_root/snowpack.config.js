@@ -3,5 +3,5 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-  extends: "../snowpack.config.js",
+  extends: "../snowpack.config.js"
 };
