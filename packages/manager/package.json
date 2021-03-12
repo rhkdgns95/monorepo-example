@@ -7,6 +7,7 @@
     "cleanup": "rimraf dist",
     "start": "snowpack dev --reload",
     "build": "yarn cleanup && tsc",
+    "build:swc": "yarn cleanup && swc src -d dist",
     "test": "echo manager app..."
   },
   "babel": {
@@ -26,6 +27,8 @@
     "@snowpack/plugin-babel": "^2.1.6",
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-react-refresh": "^2.4.0",
+    "@swc/cli": "^0.1.35",
+    "@swc/core": "^1.2.50",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
