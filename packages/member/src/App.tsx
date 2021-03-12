@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useTypedQuery } from "@jangbuda-frontend/common";
 import { Home, MyPage } from "./routes";
 
-const App: React.FC = () => {
+const App = () => {
   const { data, loading } = useTypedQuery({
     users: {
       username: true,

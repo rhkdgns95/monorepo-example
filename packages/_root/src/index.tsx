@@ -1,16 +1,16 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 import { Root } from "@jangbuda-frontend/common";
 
 // @ts-ignore
-const ManagerApp = React.lazy(() => import("@jangbuda-frontend/manager"));
+const ManagerApp = lazy(() => import("@jangbuda-frontend/manager"));
 // @ts-ignore
-const MemberApp = React.lazy(() => import("@jangbuda-frontend/member"));
+const MemberApp = lazy(() => import("@jangbuda-frontend/member"));
 
 const App = () => {
   return (
     <Root>
-      <React.Suspense fallback={<span>wait...</span>}>
+      <Suspense fallback={<span>wait...</span>}>
         <div>
           <h1>Manager App</h1>
           <ManagerApp />
@@ -19,7 +19,7 @@ const App = () => {
           <h1>Member App</h1>
           <MemberApp />
         </div>
-      </React.Suspense>
+      </Suspense>
     </Root>
   );
 };
