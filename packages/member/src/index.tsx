@@ -1,12 +1,11 @@
 import ReactDOM from "react-dom";
-import { apolloClient, CommonApp } from "@jangbuda-frontend/common";
-import { App } from "./App";
-import { ApolloProvider } from "@apollo/client";
+import { Root, CommonApp } from "@jangbuda-frontend/common";
+import App from "./App";
 
 ReactDOM.render(
-  <ApolloProvider client={apolloClient}>
+  <Root>
     <App />
     <CommonApp />
-  </ApolloProvider>,
+  </Root>,
   document.getElementById("root")
 );

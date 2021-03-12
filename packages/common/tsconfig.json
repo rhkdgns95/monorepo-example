@@ -24,6 +24,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "build",
@@ -32,7 +33,7 @@
     "webpack",
     "jest",
     "component/setupTests.ts",
-    "snowpack.config.js"
-  ],
-  "include": ["src"]
+    "snowpack.config.js",
+    "zeus"
+  ]
 }

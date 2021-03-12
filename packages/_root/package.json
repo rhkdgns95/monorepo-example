@@ -13,6 +13,7 @@
     "extends": "../babel.config.json"
   },
   "dependencies": {
+    "@jangbuda-frontend/common": "1.0.0",
     "@jangbuda-frontend/manager": "1.0.0",
     "@jangbuda-frontend/member": "1.0.0",
     "react": "^17.0.1",

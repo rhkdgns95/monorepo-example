@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-export const endpoint = "https://countries.trevorblades.com/";
-export const apolloClient = new ApolloClient({
+export const endpoint = "http://dev-jbdgql.bankda.com:8080/graphql";
+export const client = new ApolloClient({
   uri: endpoint,
   cache: new InMemoryCache(),
 });
+

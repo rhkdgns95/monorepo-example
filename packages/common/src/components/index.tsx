@@ -1,1 +1,2 @@
-export * from './CommonApp';
+export * from "./CommonApp";
+export * from "./Root";

@@ -1,18 +1,39 @@
 import { useTypedQuery } from "@jangbuda-frontend/common";
 
-export const App = () => {
-  const { data } = useTypedQuery({
-    countries: [{ filter: undefined }, { capital: true, code: true }],
+const App = () => {
+  const { data, loading } = useTypedQuery({
+    users: {
+      username: true,
+      id: true,
+    },
+    user: [
+      { id: 1 },
+      {
+        id: true,
+        username: true,
+      },
+    ],
   });
 
   console.log("data: ", data);
   return (
     <>
-      {data?.countries.map((item, key) => (
-        <p key={key}>
-          {item.capital} ({item.code})
-        </p>
-      ))}
+      {loading ? (
+        <>Loading...</>
+      ) : (
+        <>
+          <p>user - {data?.user.username}</p>
+          <div>
+            {data?.users.map((v, key) => (
+              <h5 key={key}>
+                {v.username} ({v.id})
+              </h5>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };
+
+export default App;

@@ -5,15 +5,21 @@ import {
   // subscription_root,
   ValueTypes,
   Zeus,
+  GraphQLTypes,
 } from "../generated/zeus";
 
 export function useTypedQuery<Q extends ValueTypes["Query"]>(
   query: Q,
-  options?: QueryHookOptions<MapType<any, Q>, Record<string, any>>
+  options?: QueryHookOptions<
+    MapType<GraphQLTypes["Query"], Q>,
+    Record<string, any>
+  >
 ) {
-  return useQuery<MapType<Q, Q>>(gql(Zeus.query(query)), options);
+  return useQuery<MapType<GraphQLTypes["Query"], Q>>(
+    gql(Zeus.query(query)),
+    options
+  );
 }
-
 
 // function useTypedSubscription<Q extends ValueTypes["subscription_root"]>(
 //   subscription: Q,

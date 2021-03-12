@@ -1,19 +1,24 @@
+import React from "react";
 import ReactDOM from "react-dom";
-import { App as ManagerApp } from "@jangbuda-frontend/manager";
-import { App as MemberApp } from "@jangbuda-frontend/member";
+import { Root } from "@jangbuda-frontend/common";
+
+const ManagerApp = React.lazy(() => import("@jangbuda-frontend/manager"));
+const MemberApp = React.lazy(() => import("@jangbuda-frontend/member"));
 
 const App = () => {
   return (
-    <>
-      <div>
-        <h1>Manager App</h1>
-        <ManagerApp />
-      </div>
-      <div>
-        <h1>Member App</h1>
-        <MemberApp />
-      </div>
-    </>
+    <Root>
+      <React.Suspense fallback={<span>wait...</span>}>
+        <div>
+          <h1>Manager App</h1>
+          <ManagerApp />
+        </div>
+        <div>
+          <h1>Member App</h1>
+          <MemberApp />
+        </div>
+      </React.Suspense>
+    </Root>
   );
 };
 

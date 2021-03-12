@@ -6,7 +6,7 @@
   "scripts": {
     "cleanup": "rimraf dist",
     "build": "yarn cleanup && tsc",
-    "zeus": "zeus https://countries.trevorblades.com src/generated --ts"
+    "zeus": "zeus http://dev-jbdgql.bankda.com:8080/graphql src/generated --ts"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
