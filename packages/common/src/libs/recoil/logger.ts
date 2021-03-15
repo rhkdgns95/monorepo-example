@@ -5,9 +5,9 @@ export const effects_UNSTABLE: readonly AtomEffect<any>[] | undefined = [
     onSet((nextState, prevState) => {
       const date = new Date();
       console.group(
-        `${
+        `[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] @ ${
           node.key
-        } @ ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        }`
       );
       console.debug(
         "%c prev state: ",
